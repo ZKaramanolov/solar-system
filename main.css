@@ -1,0 +1,186 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("images/sky.png");
+}
+
+/* All planets are centered to the screen */
+.center {
+    position: fixed;
+    top: 47%;
+    left: 47%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+}
+
+/* Every planet's ::before and ::after*/
+.mercury::after, .venus::after, .earth::after, .moon::after, .mars::after,
+    .jupiter::after, .saturn::after, .saturn::before, .uranus::after, .neptune::after, .comet::after {
+    content: "";
+    position: fixed;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+}
+
+.sun {
+    background-image: url(images/sun.png);
+    background-size: 100px 100px;
+    animation: rotate 40s linear infinite;
+}
+
+/*
+    .<planet name> sets rotation animation
+    .<planet name>::after is for the visualisation of planet
+*/
+
+.mercury{
+    animation: rotate 5s linear infinite;
+}
+
+.mercury::after {
+    width: 7px;
+    height: 7px;
+    background-image: url(images/mercury.png);
+    background-size: 7px 7px;
+    top: -10px;
+    left: -10px;
+}
+
+.venus{
+    animation: rotate 9s linear infinite;
+}
+
+.venus::after {
+    width: 10px;
+    height: 10px;
+    background-image: url(images/venus.png);
+    background-size: 10px 10px;
+    top: -40px;
+    left: -50px;
+}
+
+.earth{
+    animation: rotate 20s linear infinite;
+}
+
+.earth::after {
+    width: 15px;
+    height: 15px;
+    background-image: url(images/earth.png);
+    background-size: 15px 15px;
+    top: -140px;
+    left: -2px;
+}
+
+.earth > .moon {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    top: -160px;
+    left: -20px;
+    animation: rotate 3s linear infinite;
+}
+
+.moon::after {
+    width: 10px;
+    height: 10px;
+    background-image: url(images/moon.png);
+    background-size: 10px 10px;
+    top: 20px;
+    left: -5px;
+}
+
+.mars{
+    animation: rotate 35s linear infinite;
+}
+
+.mars::after {
+    width: 10px;
+    height: 10px;
+    background-image: url(images/mars.png);
+    background-size: 10px 10px;
+    top: -130px;
+    left: -130px;
+}
+
+.jupiter{
+    animation: rotate 60s linear infinite;
+}
+
+.jupiter::after {
+    width: 60px;
+    height: 60px;
+    background-image: url(images/jupiter.png);
+    background-size: 60px 60px;
+    top: -200px;
+    left: -200px;
+    animation: rotate 60s linear infinite reverse;
+}
+
+.saturn{
+    animation: rotate 100s linear infinite;
+}
+
+.saturn::after {
+    width: 80px;
+    height: 40px;
+    border-radius: 0px;
+    background-image: url(images/saturn.png);
+    background-size: 80px 40px;
+    top: -260px;
+    left: -260px;
+    animation: rotate 100s linear infinite reverse;
+}
+
+.uranus{
+    animation: rotate 140s linear infinite;
+}
+
+.uranus::after {
+    width: 40px;
+    height: 40px;
+    background-image: url(images/uranus.png);
+    background-size: 40px 40px;
+    top: -310px;
+    left: -310px;
+}
+
+.neptune{
+    animation: rotate 200s linear infinite;
+}
+
+.neptune::after {
+    width: 40px;
+    height: 40px;
+    background-image: url(images/neptune.png);
+    background-size: 40px 40px;
+    top: -365px;
+    left: -365px;
+}
+
+.comet {
+    position: fixed;
+    top: -20%;
+    left: 20%;
+    width: 1000px;
+    height: 1600px;
+    border-radius: 50%;
+    animation: rotate 15s linear infinite;
+}
+
+.comet::after {
+    width: 15px;
+    height: 9px;
+    background-color: #f4f7f9;
+    top: 300px;
+    animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
